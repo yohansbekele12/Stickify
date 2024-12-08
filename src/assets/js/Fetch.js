@@ -1,4 +1,4 @@
-const notes = [
+const data = [
   {
     id: 1,
     title: "Meeting Reminder",
@@ -31,4 +31,4 @@ const notes = [
   },
 ];
 
-export default notes;
+export default data;
