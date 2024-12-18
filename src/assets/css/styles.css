@@ -52,3 +52,27 @@ footer {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/* Inpute div */
+.entryContainer {
+  display: flex;
+  justify-content: center;
+}
+.inputContainer {
+  width: 260px;
+  margin: 20px 40px;
+  padding: 16px 30px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+input {
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  outline: none;
+  margin-bottom: 10px;
+  background-color: transparent;
+  transition: border-color 0.3s;
+}
