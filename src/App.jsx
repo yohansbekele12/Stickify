@@ -4,6 +4,7 @@ import Footer from "./componet/Footer";
 import Note from "./componet/Note";
 import data from "./assets/js/Fetch.js";
 import InputArea from "./componet/InputArea.jsx";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [notes, setNotes] = useState(data);
@@ -11,18 +12,35 @@ function App() {
   // setup state for listing notes
   function addNote(newNote) {
     const noteToAdd = {
-      id: Date.now(),
+      id: uuidv4(),
       ...newNote,
     };
-    setNotes([...notes, noteToAdd]);
+    setNotes((prevValue) => {
+      return [...prevValue, noteToAdd];
+    });
   }
-  console.log(data);
+
+  //function Delete notes
+  function DeleteNote(id) {
+    setNotes((prevValue) => {
+      return prevValue.filter((note) => {
+        return note.id !== id;
+      });
+    });
+  }
+
   return (
     <div>
       <Header />
       <InputArea onAdd={addNote} />
-      {data.map((note) => (
-        <Note key={note.id} title={note.title} content={note.content} />
+      {notes.map((note) => (
+        <Note
+          key={note.id}
+          id={note.id}
+          title={note.title}
+          content={note.content}
+          onDelete={DeleteNote}
+        />
       ))}
       <Footer />
     </div>

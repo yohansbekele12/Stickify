@@ -1,4 +1,5 @@
 import React from "react";
+import HighlightIcon from "@mui/icons-material/Highlight";
 import "../assets/css/styles.css";
 
 function Heading() {
